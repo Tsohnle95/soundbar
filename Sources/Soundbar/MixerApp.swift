@@ -15,20 +15,20 @@ struct SoundbarApp: App {
 }
 
 /// Holds the engine as an ObservableObject so SwiftUI refreshes on audio changes.
-/// Set SOUNDBAR_ENGINE=tap to use real taps, =detector for detection-only, default mock in dev.
+/// Bundled app defaults to real taps. Set SOUNDBAR_ENGINE=mock|detector to override for dev.
 @MainActor
 final class EngineHolder: ObservableObject {
     let engine: any AudioEngine
 
     init() {
-        let mode = ProcessInfo.processInfo.environment["SOUNDBAR_ENGINE"]?.lowercased() ?? "detector"
+        let mode = ProcessInfo.processInfo.environment["SOUNDBAR_ENGINE"]?.lowercased() ?? "tap"
         switch mode {
         case "mock":
             engine = MockEngine()
-        case "tap":
-            engine = TapEngine()
-        default:
+        case "detector":
             engine = DetectorEngine()
+        default:
+            engine = TapEngine()
         }
         engine.onChange = { [weak self] in self?.objectWillChange.send() }
         engine.start()

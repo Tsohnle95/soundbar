@@ -1,4 +1,5 @@
 .build/
+Soundbar.app/
 *.xcodeproj/
 xcuserdata/
 DerivedData/

@@ -2,6 +2,16 @@
 
 Windows-style per-app volume mixer for macOS, living in the menu bar.
 
+## Just use it (no terminal needed)
+
+1. Open **Finder > Applications > Soundbar** (double-click). A speaker icon appears in the top menu bar.
+2. First launch: right-click > Open (ad-hoc signature), then allow **System Audio** when prompted:
+   System Settings > Privacy & Security > Screen & System Audio Recording > Soundbar on, then relaunch.
+3. Click the speaker icon anytime to adjust per-app sliders.
+4. Launch at login: System Settings > General > Login Items > + > Soundbar.
+
+Rebuild the app after code changes: `./scripts/build-app.sh`, then `cp -R Soundbar.app /Applications/`.
+
 Built for Apple Silicon (M3 Pro) on macOS 14.2+ using the modern
 CoreAudio Process Tap API — no virtual driver install, no reboot.
 
