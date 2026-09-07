@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Soundbar</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.soundbar.app</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>Soundbar needs System Audio access to adjust individual app volumes via CoreAudio process taps.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Not used for microphone. macOS may list tap usage here on older versions.</string>
+</dict>
+</plist>

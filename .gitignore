@@ -1,0 +1,15 @@
+.build/
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+*.xcarchive
+*.dmg
+build/
+*.o
+*.d
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
